@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .button {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
+
+    .button2 {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+
+    #ball {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
+  </style>
+</head>
+<body>
+<img onclick="ballClicked()" src="img/ball.png" height="100" width="100" id="ball">
+<button onclick="moveBall()" id="button" class="button">Start</button>
+<button onclick="stopBall()" id="stopButton" class="button2">End</button>
+</body>
+<script>
+  let ballPosition = {left: 10, top: 10};
+  var setIntervalToken;
+
+  function stopBall() {
+    clearInterval(setIntervalToken);
+    document.getElementById("ball").style.left = "10px";
+    document.getElementById("ball").style.top = "10px";
+  }
+
+  function ballClicked() {
+    alert("You won!");
+    clearInterval(setIntervalToken);
+
+    document.getElementById("ball").style.left = "10px";
+    document.getElementById("ball").style.top = "10px";
+
+
+  }
+
+  function moveBall() {
+    setIntervalToken = setInterval(moveBallInterval, 1000);
+  }
+
+  function moveBallInterval() {
+    ballPosition.left = getRandomInt(window.innerWidth);
+    ballPosition.top = getRandomInt(window.innerHeight);
+    const ball = document.getElementById("ball");
+    ball.style.left = ballPosition.left + "px";
+    ball.style.top = ballPosition.top + "px";
+  }
+
+  function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
+</script>
+</html>

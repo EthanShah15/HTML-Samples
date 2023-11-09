@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mouse Clicker</title>
+  <link rel="stylesheet" href="MouseClicker.css">
+</head>
+<body>
+<div class = "heading">This is <div class = "underline">my</div> to do list:</div>
+<div>
+  <ul>
+    <li>apple</li>
+    <li>banana</li>
+    <li>cherry</li>
+  </ul>
+  <input type="text" id="number1" placeholder="First number"></input>
+  <input type="text" id="number2" placeholder="Second number"></input>
+  <button onclick="addNumbers()">add</button>
+  <button onclick="multiplyNumbers()">multiply</button>
+  <div><output id="outputNumber"></output>
+  </div>
+</div>
+</body>
+<script>
+  function addNumbers(){
+    var number1 = document.getElementById("number1").value;
+    var number2 = document.getElementById("number2").value;
+    var sum = parseInt(number1) + parseInt(number2);
+    console.log(sum);
+    document.getElementById("outputNumber").value = sum;
+  }
+  function multiplyNumbers(){
+    var number1 = document.getElementById("number1").value;
+    var number2 = document.getElementById("number2").value;
+    var multiplication = parseInt(number1) * parseInt(number2);
+    console.log(multiplication);
+    document.getElementById("outputNumber").value = multiplication;
+  }
+</script>
+</html>

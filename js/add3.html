@@ -1,0 +1,30 @@
+<html>
+
+<head>
+
+  <style></style>
+
+</head>
+
+<body>
+
+<input type="text" id="number1" placeholder="first number"></input>
+<input type="text" id="number2" placeholder="second number"></input>
+<input type="text" id="number3" placeholder="third number"></input>
+<button onclick="addNumbers()">add numbers</button>
+<br>
+<div id="output"></div>
+</body>
+
+<script>
+  function addNumbers() {
+    debugger
+    var number1 = document.getElementById("number1").value;
+    var number2 = document.getElementById("number2").value;
+    var number3 = document.getElementById("number3").value;
+    document.getElementById("output").innerHTML = parseInt(number1) + parseInt(number2) + parseInt(number3);
+  }
+</script>
+
+</html>
+
