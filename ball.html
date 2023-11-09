@@ -36,19 +36,16 @@
     clearInterval(setIntervalToken);
     document.getElementById("ball").style.left = "10px";
     document.getElementById("ball").style.top = "10px";
+    document.getElementById("button").disabled = false;
   }
 
   function ballClicked() {
     alert("You won!");
-    clearInterval(setIntervalToken);
-
-    document.getElementById("ball").style.left = "10px";
-    document.getElementById("ball").style.top = "10px";
-
-
+    stopBall();
   }
 
   function moveBall() {
+    document.getElementById("button").disabled = true;
     setIntervalToken = setInterval(moveBallInterval, 1000);
   }
 
