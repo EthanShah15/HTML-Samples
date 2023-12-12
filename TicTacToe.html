@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .grid-container {
+      display: grid;
+      grid-template-columns: 100px 100px 100px;
+      background-color: white;
+      padding: 10px;
+    }
+    .grid-item {
+      background-color: rgb(255, 255, 255);
+      border: 1px solid rgba(0, 0, 0, 0.8);
+      padding: 20px;
+      font-size: 30px;
+      text-align: center;
+      cursor: pointer;
+    }
+    .grid-item:hover {
+      background: gray;
+    }
+  </style>
+</head>
+<body>
+<output id="player">Player 1</output>
+<div class="grid-container">
+  <div onclick="square(1)" id="square1" class="grid-item"></div>
+  <div onclick="square(2)" id="square2" class="grid-item"></div>
+  <div onclick="square(3)" id="square3" class="grid-item"></div>
+  <div onclick="square(4)" id="square4" class="grid-item"></div>
+  <div onclick="square(5)" id="square5" class="grid-item"></div>
+  <div onclick="square(6)" id="square6" class="grid-item"></div>
+  <div onclick="square(7)" id="square7" class="grid-item"></div>
+  <div onclick="square(8)" id="square8" class="grid-item"></div>
+  <div onclick="square(9)" id="square9" class="grid-item"></div>
+</div>
+</body>
+<script>
+  var currentPlayer = 1;
+function square(boxNumber){
+  console.log("The box number is: " + boxNumber);
+  document.getElementById("square" + boxNumber).innerHTML = "X";
+  console.log("before if current player: " + currentPlayer);
+  if(currentPlayer == 1){
+    currentPlayer = 2;
+  }else{
+    currentPlayer = 1;
+  }
+  document.getElementById("player").value = "Player " + currentPlayer;
+  console.log("after if current player " + currentPlayer);
+}
+</script>
+</html>
