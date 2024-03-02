@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+  </style>
+</head>
+<h1>Fibonacci Sequence Calculator</h1>
+<h4>Enter the number of digits of the fibonacci sequence you would like to calculate</h4>
+<input id="digits" name="digits" placeholder="Enter # of digits" onchange="fibonacci()"></input>
+
+<br>
+<output id="output" name="run"></output>
+<body>
+<script>
+function fibonacci() {
+  var digits = parseInt(document.getElementById("digits").value);
+  var num1 = 0;
+  var num2 = 1;
+  var seq = "";
+
+  for (var i = 0; i < digits; i++) {
+    seq += num1 + (i < digits - 1 ? ", " : "");
+    var nextDigit = num1 + num2;
+    num1 = num2;
+    num2 = nextDigit;
+  }
+
+  document.getElementById("output").value = seq;
+}
+</script>
+</body>
+</html>
