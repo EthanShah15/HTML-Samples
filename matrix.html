@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+  <style>
+
+  </style>
+</head>
+
+<body>
+<input id="number1" placeholder="first number" onchange="calculate()"/>
+<input id="number2" placeholder="second number" onchange="calculate()"/>
+<input id="number3" placeholder="third number" onchange="calculate()"/>
+<output id="output1"></output>
+<br>
+<input id="number4" placeholder="fourth number" onchange="calculate()"/>
+<input id="number5" placeholder="fifth number" onchange="calculate()"/>
+<input id="number6" placeholder="sixth number" onchange="calculate()"/>
+<output id="output2"></output>
+<br>
+<input id="number7" placeholder="seventh number" onchange="calculate()"/>
+<input id="number8" placeholder="eighth number" onchange="calculate()"/>
+<input id="number9" placeholder="ninth number" onchange="calculate()"/>
+<output id="output3"></output>
+<br>
+
+<output id="output4"></output>
+<output id="output5"></output>
+<output id="output6"></output>
+
+<script>
+  function calculate(){
+    var number1 = customParseInt(document.getElementById("number1")?.value);
+    var number2 = customParseInt(document.getElementById("number2")?.value);
+    var number3 = customParseInt(document.getElementById("number3")?.value);
+    document.getElementById("output1").value = number1+number2+number3;
+    var number4 = customParseInt(document.getElementById("number4")?.value);
+    var number5 = customParseInt(document.getElementById("number5")?.value);
+    var number6 = customParseInt(document.getElementById("number6")?.value);
+    console.log("number4" + " = " + number4);
+    console.log("number5" + " = " + number5);
+    console.log("number6" + " = " + number6);
+    document.getElementById("output2").value = number4+number5+number6;
+    var number7 = customParseInt(document.getElementById("number7")?.value);
+    var number8 = customParseInt(document.getElementById("number8")?.value);
+    var number9 = customParseInt(document.getElementById("number9")?.value);
+    document.getElementById("output3").value = number7+number8+number9;
+    document.getElementById("output4").value = number1+number4+number7;
+    document.getElementById("output5").value = number2+number5+number8;
+    document.getElementById("output6").value = number3+number6+number9;
+  }
+  function customParseInt(number){
+    console.log("customParseInt number" + " = " + number);
+    if(number!=null && number!="" && number!=undefined){
+      return parseInt(number);
+    }return 0;
+  }
+</script>
+</body>
+</html>
