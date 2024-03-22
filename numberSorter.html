@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<input id="number1" placeholder="first number"/>
+<input id="number2" placeholder="second number"/>
+<input id="number3" placeholder="third number"/>
+<button onclick="sortNumbers()">sort numbers</button>
+</body>
+
+<script>
+function sortNumbers() {
+  var number1 = parseInt(document.getElementById("number1").value);
+  var number2 = parseInt(document.getElementById("number2").value);
+  var number3 = parseInt(document.getElementById("number3").value);
+  const numberArray = [number1, number2, number3];
+  for(var i = 0; i < numberArray.length; i++){
+    for(var j = 0; j < numberArray.length - 1; j++){
+    if(numberArray[j] > numberArray[j+1]) {
+      console.log("replacing ", numberArray[j], " with ", numberArray[j+1]);
+      var transfer = numberArray[j];
+      numberArray[j] = numberArray[j+1];
+      numberArray[j+1] = transfer;
+      }
+    }
+  }
+  document.getElementById("number1").value = numberArray[0];
+  document.getElementById("number2").value = numberArray[1];
+  document.getElementById("number3").value =numberArray[2];
+}
+</script>
+</html>
